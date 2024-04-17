@@ -5,8 +5,7 @@ tags:
 toc: true
 ---
 
-Apart from the tag helpers supported by Hexo natively, as described in {% post_link demo/Hexo-Built-In-Tag-Helpers %},
-Icarus also offers several other useful tag helpers to customize the display of your content.
+
 
 <article class="message message-immersive is-primary">
 <div class="message-body">
