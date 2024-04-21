@@ -203,13 +203,13 @@ widgets:
         position: left
         type: profile
         # Author name
-        author: Miao miaomiao
+        author: Meow Meow
         # Author title
         author_title: Cat
         # Author's current location
         location: Earth, Solar System
         # URL or path to the avatar image
-        avatar: https://striiike.github.io/pic/eva.png
+        avatar: /gallery/eva.png
         # Whether show the rounded avatar image
         avatar_rounded: false
         # Email address for the Gravatar
