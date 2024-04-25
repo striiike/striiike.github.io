@@ -13,7 +13,7 @@ mathjax: true
 
 $A^{(\gamma)}_{ui}$ stands for the cross-attention map associating each spatial location $u \in \{1, ..., \frac{H}{r} \} \times \{1, ..., \frac{W}{r}\}$, and text token indexed by $i \in \{1, ..., N\}$. 
 
-$u$ can be considered as the pixel in the picture.
+$u$ can be considered as the pixel compressed in the picture.
 
 
 ### Forward Guidance
