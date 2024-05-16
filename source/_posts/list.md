@@ -17,6 +17,8 @@ tags:
 
 - [x] [stable diffusion](https://arxiv.org/pdf/2112.10752)
 
+- [ ] [LCM-Lookahead for Encoder-based Text-to-Image Personalization](https://arxiv.org/pdf/2404.03620)
+
 
 
 
