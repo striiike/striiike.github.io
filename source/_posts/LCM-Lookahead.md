@@ -57,3 +57,12 @@ Because of the diversity of the training set, tuning it makes it easier to focus
 
 ### Consistent Data Generation
 
+To improve prompt alignment and address biases in training data, they generate a novel dataset with synthetic subjects across diverse prompts, ensuring consistency and including stylized images to prevent overemphasis on photo-realism. Among various methods, SDXL-Turbo provided the best balance between generation time, identity consistency, and style variability, producing 500k images for training our encoder.
+
+
+
+
+
+
+
+
