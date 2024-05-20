@@ -4,8 +4,9 @@ db.json
 *.log
 
 node_modules/
-!node_modules/hexo-theme-icarus
-!node_modules/hexo-theme-icarus/**
+# !node_modules/hexo-theme-icarus
+# node_modules/theme-icarus/*
+# !node_modules/hexo-theme-icarus/**
 
 public/
 .deploy*/
