@@ -1,5 +1,5 @@
 ---
-title: LCM-Lookahead for Encoder-based Text-to-Image Personalization
+title: LCM-Lookahead for Encoder-based T2I Personalization
 date: 2024-05-19 15:46:10
 tags:
 ---
@@ -18,9 +18,9 @@ An intriguing property of generative models is that fine-tuning alignment result
 
 Use a fast sampling and latent consistency method (LCM).
 
-## Method
+# Method
 
-### LCM-Lookahead Loss
+## LCM-Lookahead Loss
 
 `Equation (3)`
 $$ \hat{z}_{r,0} = \frac{1}{\sqrt{\alpha_t}} \left( z_{r,t} - \sqrt{\beta_t} \cdot \epsilon_{\text{LCM}}(z_{r,t}, y, t, E(I_c)) \right) $$
@@ -30,7 +30,7 @@ $$ \mathcal{L}_{\text{LH}} = \mathcal{D} \left( D_{\text{VAE}}(\hat{z}_{r,0}), I
 
 By adding $y$ and $E(I_c)$, which stand for the prompt and conditioning image respectively, as parameters into the diffusion network.
 
-### Maintaining Alignment
+## Maintaining Alignment
 
 > In order to keep alignment not only with the prior input but also with the baseline model
 
@@ -38,7 +38,7 @@ Randomly re-scale the LoRA component using a factor $\alpha_{LoRA}$ drawn from t
 
 Apply annealing to how early the time steps should be focused because early diffusion steps are more effective.
 
-### Extended Self-Attention Features
+## Extended Self-Attention Features
 
 Augment the identity fidelity by applying a KV-Encoder (derived from the U-Net in the diffusion reversing process).
 
@@ -55,12 +55,20 @@ Due to the excessive appearance transfer by the pretrained U-Net, which is the K
 
 Because of the diversity of the training set, tuning it makes it easier to focus on the identity instead of appearance.
 
-### Consistent Data Generation
+## Consistent Data Generation
 
 To improve prompt alignment and address biases in training data, they generate a novel dataset with synthetic subjects across diverse prompts, ensuring consistency and including stylized images to prevent overemphasis on photo-realism. Among various methods, SDXL-Turbo provided the best balance between generation time, identity consistency, and style variability, producing 500k images for training our encoder.
 
 
+# Appendix
 
+## LCM-LoRA
+
+related paper [LCM](https://arxiv.org/pdf/2310.04378)
+
+当微调 Diffusion Model 使其满足 Consistency 约束之后，其采样生成的过程就非常自然。从噪声中采样一个点，送入 
+𝑓
+f 中，就得到了其对应的数据样本。这就是 Consistency Model 的单步生成模式。与此同时，Consistency Model 也可以通过多步生成来实现牺牲速度提升生成质量的权衡。Consistency Model 的多步生成过程大略如下图所示：
 
 
 
